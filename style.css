@@ -1,0 +1,200 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input, select {font-size: 16px;} /* Brak zooma przy kliknięciu na input ;) */
+
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.chatUser{
+    padding: 20px 0;
+    border: 1px solid gainsboro;
+}
+
+.chatMessage{
+    overflow-x: scroll;
+    overflow-y: scroll;
+    height: 400px;
+    border: 1px solid gainsboro;
+    float: left;
+    width: 70%;
+}
+
+.chatMessage >li:nth-child(2n){
+    background-color: cyan;
+}
+
+.chatMessage>li>p{
+    display: inline;
+}
+
+.chatMessage>li{
+    display: block;
+}
+
+#message{
+    margin-top: 10px;
+    width: 600px;
+    padding: 5px 10px;
+}
+.msg{
+    list-style: none;
+    padding: 5px;
+    color: #222222;
+    border: 1px solid #dddddd;
+}
+
+#button{
+    padding: 5px 10px;
+    border: 1px solid darkgrey;
+    cursor: pointer;
+}
+
+#button:hover{
+    padding: 5px 10px;
+    border: 1px solid darkgrey;
+    background-color: #666666;
+}
+
+.chatUserL{
+    float: left;
+    color: forestgreen;
+    width: 29%;
+    border: 1px solid gainsboro;
+    display: block;
+    height: 400px;
+}
+
+.user_online{
+    display: none ;
+}
+
+.close{
+    display: none;
+}
+
+
+@media screen and  (max-width: 620px){
+
+    .chatUser{
+        border: none;
+        padding: 0;
+    }
+
+    .chatUser>h1{
+        text-align: center;
+    }
+
+    .chatMessage{
+        width: 100%;
+        overflow-x: hidden;
+        border: none;
+
+    }
+
+    #message{
+        width: 90%;
+        padding: 15px 10px;
+    }
+
+    #button{
+        width: 50%;
+        text-align: center;
+        margin-left: 24%;
+        margin-top: 10px;
+        background-color: crimson;
+        padding: 15px 0;
+        font-size: 24px;
+    }
+    #button:hover{
+        background-color: darkred;
+        width: 50%;
+        text-align: center;
+        margin-left: 24%;
+        margin-top: 10px;
+        padding: 15px 0;
+    }
+
+    .chatUserL{
+        display: none;
+        position: absolute;
+        top: 10%;
+        left: 0;
+        height: 400px;
+        width: 150px;
+        background-color: #222222;
+    }
+
+    .close{
+        position: absolute;
+        top: 69%;
+        left: 0%;
+        width: 152px;
+        background-color: darkgrey;
+        text-align: center;
+        padding: 8px 0;
+    }
+
+    .user_online{
+        display: block;
+        padding-bottom: 20px;
+    }
+
+    .login_form #user{
+        width: 100%;
+        padding: 20px 0 ;
+
+    }
+    .login_form:before{
+        content: "Podaj Login";
+        text-align: center;
+    }
+}
