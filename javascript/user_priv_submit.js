@@ -36,12 +36,12 @@ function user_priv_submit() {
             cache: false,
             data: dataString,
             success: function (data) {
-                var count1 = $(".user_contents li:last-child").attr('ss');
+                var count1_priv = $(".user_contents li:last-child").attr('ss');
                 $(".user_contents").attr(data);
                 $(".user_contents").html(data);
-                var count = data.split('<li').length - 2;
-                array = [count, count1];
-                $(".user_contents").scrollTop($(".user_contents")[0].scrollHeight);
+                var count_priv = data.split('<li').length - 2;
+               // $(".user_contents").scrollTop($(".user_contents")[0].scrollHeight);
+                array = [count_priv, count1_priv];
 
             }
         });
@@ -51,13 +51,13 @@ function user_priv_submit() {
 
     setInterval(function () {
 
-        var num = priv_getMessage();
+        var num_priv = priv_getMessage();
         // alert(num);
         //console.log(num);
-        if (!num[1]) {
+        if (!num_priv[1]) {
             $(".user_contents").scrollTop($(".user_contents")[0].scrollHeight);
         }
-        if (num[0] > num[1]) {
+        if (num_priv[0] > num_priv[1]) {
             $(".user_contents").scrollTop($(".user_contents")[0].scrollHeight);
         }
 
@@ -74,7 +74,7 @@ function onLoad_priv(id){
     var dataString = "login=" + login + "&message=" + message + "&login_do=" + login_do + "&submit_priv=" + submit; //Sklejanie powyżyszych stringów w jeden
 
 
-    function priv_getMessage() {
+    function priv_getMessagee() {
         $.ajax({
             type: "post",
             url: "getMessagePriv.php",
@@ -93,8 +93,8 @@ function onLoad_priv(id){
 
         return array;
     }
-    setInterval(function () {
-        var num = priv_getMessage();
-        },1000)
+   // setInterval(function () {
+        var num = priv_getMessagee();
+       // },1000)
 
-}
+} 

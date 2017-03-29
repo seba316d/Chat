@@ -11,6 +11,8 @@ $(document).ready(function() {
         var submit = document.getElementById("button").value; // Pobieranie wartosci "Czy wysłano"
 
         var dataString = "login="+login+"&message="+message + "&submit="+ submit; //Sklejanie powyżyszych stringów w jeden
+
+
     alert(dataString);
         $.ajax({
             type:"post",
@@ -22,7 +24,6 @@ $(document).ready(function() {
                 $(".chatMessage").append(data);
                 document.getElementById("message").value = "";
                 $(".chatMessage").scrollTop($(".chatMessage")[0].scrollHeight);
-
             }
 
         })

@@ -24,7 +24,6 @@ function user_priv_message(id){
         $.ajax({
             type: "post",
             url: "createMessage.php",
-            //dataType: "json",
             data: dataString,
             success: function (data) {
 
@@ -35,7 +34,6 @@ function user_priv_message(id){
         })
         count++;
 
-        //alert(count);
     }
 }
 
