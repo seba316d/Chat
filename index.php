@@ -31,6 +31,8 @@ if(isset($user)){
     <script src="javascript/deleteUser.js" type="text/javascript"></script>
     <script src="javascript/OnlineUsers.js" type="text/javascript"></script>
     <script src="javascript/checkCookie.js" type="text/javascript"></script>
+    <script src="javascript/user_priv_message.js" type="text/javascript"></script>
+    <script src="javascript/user_priv_submit.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,11 +82,10 @@ if(isset($user)){
 
     </div>
 
-    <div class="priv_message" style="position: absolute;display: block">
-
-
+    <div class="user_message_container" id="user_message_container">
 
     </div>
+
 
 </body>
 

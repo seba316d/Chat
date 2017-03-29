@@ -5,7 +5,6 @@
  * Date: 06.03.2017
  * Time: 15:03
  */
-
 require_once ('config/config.php');
 
 onlineUsers($config);
@@ -28,10 +27,12 @@ echo '<p> Użytkownicy Online</p>';
 
         $user = $row['users'];
         if(@$_COOKIE['login']==$user){  // tutaj blokuje wyświetlanie się samego siebie
-            //echo '<li>Ja</li>';
+           // echo '<li id="'.$_COOKIE['login'].'" onclick="user_priv_message(this.id)">Ja</li>';
         }
         else{
-            echo '<li><a href="priv.php?user='.$user.'" target="_blank">'.$user.'</li>';
+
+           // echo '<li id=".$user"><a href="priv.php?user='.$user.'" target="_blank">'.$user.'</li>';
+            echo '<li  id="'.$user.'" class="lst_online" onclick="user_priv_message(this.id);onLoad_priv(this.id)">'.$user.'</li>';
         }
 
     }

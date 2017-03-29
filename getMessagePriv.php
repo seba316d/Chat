@@ -9,7 +9,7 @@ session_start();
 require_once ('config/config.php');
 
 $od = htmlspecialchars($_COOKIE['login']);
-$do = htmlspecialchars($_SESSION['do']);
+$do = htmlspecialchars($_POST['login_do']);
 
 Connection_Database($config,$od,$do);
 

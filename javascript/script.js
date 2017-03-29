@@ -11,7 +11,7 @@ $(document).ready(function() {
         var submit = document.getElementById("button").value; // Pobieranie wartosci "Czy wysłano"
 
         var dataString = "login="+login+"&message="+message + "&submit="+ submit; //Sklejanie powyżyszych stringów w jeden
-
+    alert(dataString);
         $.ajax({
             type:"post",
             url: "chatPoster.php",

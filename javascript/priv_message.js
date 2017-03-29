@@ -44,7 +44,7 @@ function priv_getMessage(){
             $(".chatMessage").attr(data);
             $(".chatMessage").html(data);
             var count = data.split('<li').length-2;
-            array = [count,count1];
+            var array = [count,count1];
 
 
         }

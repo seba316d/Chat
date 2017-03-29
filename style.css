@@ -198,3 +198,51 @@ input, select {font-size: 16px;} /* Brak zooma przy kliknięciu na input ;) */
         text-align: center;
     }
 }
+
+.user_message_container{
+    max-width: 1700px;
+}
+
+.user_message{
+    width: 300px;
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 80%;
+    border: 1px solid #e1e2e1;
+}
+
+.user_contents{
+    overflow-y: scroll;
+    height: 250px;
+}
+
+.user_message span{
+    border: 1px solid #5656da;
+    background-color: #378ef3;
+    display: block;
+    padding: 6px;
+    text-align: right;
+    color: white;
+}
+
+
+.user_login{
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    color: white
+}
+
+#message_priv{
+    padding: 6px 0;
+    width: 99%;
+}
+
+.user_message #button{
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #378ef3;
+}
