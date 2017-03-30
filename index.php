@@ -53,7 +53,7 @@ if(isset($user)){
 
 </head>
 
-<body onload="return false">
+<body>
 
     <div class="container">
 

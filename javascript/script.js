@@ -13,7 +13,7 @@ $(document).ready(function() {
         var dataString = "login="+login+"&message="+message + "&submit="+ submit; //Sklejanie powyżyszych stringów w jeden
 
 
-    alert(dataString);
+   // alert(dataString);
         $.ajax({
             type:"post",
             url: "chatPoster.php",

@@ -15,19 +15,19 @@ CreateDiv($user,$count);
 function CreateDiv($user,$count){
 if($count==0) {
     echo '
-        <div class="user_message user_message_'.$user.'" id="user_message" onload="return user_priv_submit()">
-        <span onclick="user_close()">Zamknij</span>
+        <div class="user_message user_message_'.$user.'" id="user_message_'.$user.'">
+        <span id="'.$user.'" onclick="user_close(this.id)">Zamknij</span>
             <div class="user_login">
             <p >' . $user . '</p>
             </div>
-            <div class="user_contents">
+            <div class="user_contents_'.$user.' cos">
             </div>
             <div class="user_sending">
-                 <form method="post" id="chatForm_priv">
-                    <input type="hidden" name="user" id="user" value="<?php echo $_COOKIE[\'login\'] ?>">
+                 <form  method="post" id="chatForm_priv" >
+                    <input type="hidden" name="user" id="user" value="'.$_COOKIE['login'] .'">
                     <input type="hidden" name="user" id="do" value="'.$user.'">
-                    <input type="text" name="message" placeholder="Napisz wiadomość..." value="" id="message_priv">
-                    <input type="submit_priv" name="submit_priv" value="Wyślij" id="button" onClick="return user_priv_submit()">
+                    <input type="text" name="message" placeholder="Napisz wiadomość..." value="" id="message_priv_'.$user.'">
+                    <input id="'.$user.'" type="submit_priv" name="submit_priv" value="Wyślij" id="button" onClick="user_priv_submit(this.id)">
                 </form>
             </div>
         
