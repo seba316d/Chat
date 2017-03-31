@@ -240,9 +240,10 @@ input, select {font-size: 16px;} /* Brak zooma przy kliknięciu na input ;) */
     bottom: -25px;
 }
 
-#message_priv{
-    padding: 6px 0;
-    width: 99%;
+.message_priv{
+    padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .user_message #button{
@@ -251,4 +252,30 @@ input, select {font-size: 16px;} /* Brak zooma przy kliknięciu na input ;) */
     padding: 10px 0;
     text-align: center;
     background-color: #378ef3;
+}
+
+.submit_priv{
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #2caee8;
+    border: none;
+    padding: 10px 0;
+}
+
+.priv_od{
+    color: #8d9292;
+    display: inline-block;
+}
+
+.priv_message{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+
+.priv_msg{
+    list-style: none;
 }

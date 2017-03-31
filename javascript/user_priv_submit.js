@@ -7,12 +7,12 @@ function user_priv_submit(id) {
      * Created by s.manczak on 07.03.2017.
      */
     var login = document.getElementById("user").value; // Pobieranie nazwy usera z ukrytego inputa tak zwane OD
-    var login_do = id//document.getElementById("do").value; // Pobieranie nazwy usera z ukrytego inputa tak zwane DO
+    var login_do = id; //document.getElementById("do").value; // Pobieranie nazwy usera z ukrytego inputa tak zwane DO
     var message = document.getElementById("message_priv_"+id).value; // Pobieranie całej wiadomości
     var submit = document.getElementById("button").value; // Pobieranie wartosci "Czy wysłano"
 
     var dataString = "login=" + login + "&message=" + message + "&login_do=" + login_do + "&submit_priv=" + submit; //Sklejanie powyżyszych stringów w jeden
-
+    //alert(dataString);
     $.ajax({
         type: "post",
         url: "chatPoster.php",
@@ -26,6 +26,16 @@ function user_priv_submit(id) {
         }
 
     });
+
+    function getCoordinates() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(alertPosition);
+        } else {
+            alert('twoja przeglądarka nie wspiera geolokacji...');
+        }
+    }
+
+    alert(getCoordinates());
 
 
     function priv_getMessage(id) {
@@ -57,7 +67,6 @@ function onLoad_priv(id){
 
     var dataString = "login=" + login + "&message=" + message + "&login_do=" + login_do + "&submit_priv=" + submit; //Sklejanie powyżyszych stringów w jeden
 
-
     function priv_getMessagee(id) {
         $.ajax({
             type: "post",
@@ -69,30 +78,26 @@ function onLoad_priv(id){
                 $(".user_contents_"+id).attr(data);
                 $(".user_contents_"+id).html(data);
                 var count_priv = data.split('<li').length - 2;
-                array_priv = [count_priv,count1_priv];
-                if(count1_priv > count1_priv) {
-                    $(".user_contents_" + id).scrollTop($(".user_contents_" + id)[0].scrollHeight);
-                }
+                //console.log("Count priv: "+ count_priv + " count_priv1: "+ count1_priv+" ID dla tego: "+id);
+                array_priv = [count_priv,count1_priv,id];
             }
         });
 
         return array_priv;
     }
-//debugger
+
+
     setInterval(function () {
 
-        //debugger
 
         var num_priv = priv_getMessagee(id);
-        if(id=="w3") {
-            //alert(num_priv[1]);
-            //$(".user_contents_w3").scrollTop($(".user_contents_"+id)[0].scrollHeight);
-        }
         if (!num_priv[1]) {
-            $(".user_contents_"+id).scrollTop($(".user_contents_"+id)[0].scrollHeight);
+
+            $(".user_contents_" + num_priv[2]).scrollTop($(".user_contents_" + num_priv[2])[0].scrollHeight);
         }
         if (num_priv[0] > num_priv[1]) {
-            $(".user_contents_"+id).scrollTop($(".user_contents_"+id)[0].scrollHeight);
+            $(".user_contents_"+num_priv[2]).scrollTop($(".user_contents_"+num_priv[2])[0].scrollHeight);
+
         }
 
     }, 1000);

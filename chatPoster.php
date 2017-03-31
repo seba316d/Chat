@@ -103,7 +103,7 @@ class chatPoster
         $result = $stmt->execute();
 
 
-        echo '<li class="msg" id="' . "1" . '" ss="' . "2" . '"><p>' . $this->user . '</p><b> ' . $do . ': ' . ' </b>' . $this->message . '</li>';
+        echo '<li class="priv_msg" id="' . "1" . '" ss="' . "2" . '"><p class="priv_od">' . $this->user . ':</p><p class="priv_message">' . $this->message . '</p></li>';
 
         setcookie("login","$this->user",time()-1);
         setcookie("login","$this->user",time()+300);

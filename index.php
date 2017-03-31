@@ -49,12 +49,32 @@ if(isset($user)){
             document.getElementById("close").style.display = "none";
         }
 
+         x = document.getElementById('geolocation');
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = 'Geolocation is not supported by this browser.';
+            }
+        }
+
+        function showPosition(position) {
+            var latLon = position.coords.latitude + ',' + position.coords.longitude,
+                imgUrl = 'http://maps.googleapis.com/maps/api/staticmap?center='+latLon+'&zoom=14&size=400x300&sensor=true';
+            console.log(latLon);
+
+            document.getElementById('geolocation').innerHTML = '<img src="' + imgUrl + '" />';
+        }
+
+        getLocation();
+
     </script>
 
 </head>
 
 <body>
-
+<div id="geolocation"></div>
     <div class="container">
 
         <div class="chatUser">
@@ -85,6 +105,7 @@ if(isset($user)){
     <div class="user_message_container" id="user_message_container">
 
     </div>
+
 
 
 </body>

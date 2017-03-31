@@ -26,8 +26,8 @@ if($count==0) {
                  <form  method="post" id="chatForm_priv" >
                     <input type="hidden" name="user" id="user" value="'.$_COOKIE['login'] .'">
                     <input type="hidden" name="user" id="do" value="'.$user.'">
-                    <input type="text" name="message" placeholder="Napisz wiadomość..." value="" id="message_priv_'.$user.'">
-                    <input id="'.$user.'" type="submit_priv" name="submit_priv" value="Wyślij" id="button" onClick="user_priv_submit(this.id)">
+                    <input class="message_priv" type="text" name="message" placeholder="Napisz wiadomość..." value="" id="message_priv_'.$user.'">
+                    <input id="'.$user.'" type="submit_priv" name="submit_priv" class="submit_priv" value="Wyślij" id="button" onClick="return user_priv_submit(this.id)" readonly="readonly">
                 </form>
             </div>
         

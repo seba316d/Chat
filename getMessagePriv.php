@@ -40,7 +40,7 @@ function Connection_Database($config,$od,$do)
             $do = $row['do'];
             $message = $row['message'];
 
-            echo '<li class="priv_msg" id="' . $id . '" ss="' . $licznik . '"><p>' . $od . '</p><b> ' . $do . ': ' . ' </b>' . $message . '</li>';
+            echo '<li class="priv_msg" id="' . $id . '" ss="' . $licznik . '"><p class="priv_od">' . $od . ':</p> <p class="priv_message"> '. $message .'</p></li>';
             $licznik++;
         }
     }
